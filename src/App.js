@@ -32,7 +32,7 @@ onSubmit:async(values)=>{
   try {
     console.log(values)
     setLoading(true)
-    await axios.post("http://localhost:8000/create-user",values)
+    await axios.post("https://practice-e5z0.onrender.com/create-user",values)
     setLoading(false)
     getUsers()
   } catch (error) {
@@ -49,7 +49,7 @@ useEffect(()=>{
 
 let getUsers=async()=>{
   try {
-    const userdata = await axios.get("http://localhost:8000")
+    const userdata = await axios.get("https://practice-e5z0.onrender.com")
     setUserList(userdata.data);
     
   } catch (error) {
@@ -91,10 +91,10 @@ let getUsers=async()=>{
  
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">No</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Age</th>
     </tr>
   </thead>
   <tbody>
